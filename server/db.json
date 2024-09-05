@@ -1,0 +1,211 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "TheCuong",
+        "email": "TheCuong@gmail.com",
+        "fullname": "Nguyễn Thế Cường",
+        "password": "0966109687",
+        "status": "active",
+        "role": "admin",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "8/7/2024",
+        "updated_at": "9/7/2024"
+      },
+      {
+        "id": 2,
+        "username": "kimanh",
+        "email": "kimanh@gmail.com",
+        "fullname": "Nguyễn Thế Cường",
+        "password": "13204591359",
+        "status": "locked",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "6/7/2024",
+        "updated_at": "2024-07-12T01:35:11.256Z"
+      },
+      {
+        "id": 3,
+        "username": "ha",
+        "email": "ha@gmail.com",
+        "fullname": "Nguyễn Ngọc Hà",
+        "password": "1224356789",
+        "status": "active",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "6/7/2024",
+        "updated_at": "2024-07-12T01:30:54.388Z"
+      },
+      {
+        "id": 4,
+        "username": "PhamBay",
+        "email": "phambay@gmail.com",
+        "fullname": "Phạm Thị Bảy",
+        "password": "0865810156",
+        "status": "active",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "08/07/2024",
+        "updated_at": "08/07/2024"
+      },
+      {
+        "id": 5,
+        "username": "BuiLam",
+        "email": "Builam@gmail.com",
+        "fullname": "Bùi Văn Lậm",
+        "password": "0387208609",
+        "status": "active",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "08/07/2024",
+        "updated_at": "08/07/2024"
+      },
+      {
+        "id": 6,
+        "username": "buihuong",
+        "email": "buihuong@gmail.com",
+        "fullname": "Bùi Thị Hường",
+        "password": "03252663466",
+        "status": "active",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "08/07/2024",
+        "updated_at": "2024-07-12T01:30:57.021Z"
+      },
+      {
+        "id": 7,
+        "username": "NguyenKim",
+        "email": "nguyenkim@gmail.com",
+        "fullname": "Nguyễn Trọng Kim",
+        "password": "033258609",
+        "status": "active",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "08/07/2024",
+        "updated_at": "08/07/2024"
+      },
+      {
+        "id": 8,
+        "username": "B23DTCN183",
+        "email": "hp@gmail.com",
+        "fullname": "111",
+        "password": "111",
+        "status": "active",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "2024-07-11T11:32:11.336Z",
+        "updated_at": "2024-07-11T11:32:11.337Z"
+      },
+      {
+        "id": 9,
+        "username": "fwf",
+        "email": "nmh@12",
+        "fullname": "111",
+        "password": "111",
+        "status": "active",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "2024-07-11T11:33:22.185Z",
+        "updated_at": "2024-07-11T11:33:22.185Z"
+      },
+      {
+        "id": 10,
+        "username": "1",
+        "email": "22@1",
+        "fullname": "111",
+        "password": "111",
+        "status": "locked",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "2024-07-12T00:56:18.891Z",
+        "updated_at": "2024-07-12T01:35:24.723Z"
+      },
+      {
+        "id": 11,
+        "username": "minh hoang",
+        "email": "mh@1",
+        "fullname": "111",
+        "password": "111",
+        "status": "locked",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "2024-07-12T00:57:31.376Z",
+        "updated_at": "2024-07-12T01:35:24.014Z"
+      },
+      {
+        "id": 12,
+        "username": "111",
+        "email": "111@1",
+        "fullname": "11",
+        "password": "11",
+        "status": "locked",
+        "role": "user",
+        "avatar": "",
+        "phone": "",
+        "address": "",
+        "created_at": "2024-07-12T00:58:05.519Z",
+        "updated_at": "2024-07-12T01:35:23.332Z"
+      }
+    ],
+    "categories": [
+      {
+        "name": "kem",
+        "description": "",
+        "status": true,
+        "id": 6
+      },
+      {
+        "name": "bim bim",
+        "description": "",
+        "status": true,
+        "id": 7
+      }
+    ],
+   "products": [
+      {
+        "id": 7,
+        "product_name": "Kem bắp",
+        "description": "KEM BẮP AICE là thương hiệu nổi tiếng của Singapore, được sản xuất tại Indonesia.,\n- Bảo quản: nhiệt độ -18 độ C, ngăn đông.,\n Hạn dùng: 24 tháng kể từ ngày sản xuất.,",
+        "unit_price": "1",
+        "stock_quantity": "50",
+        "image": "https://down-vn.img.susercontent.com/file/bece7b490d33338926eca481719ffbd1",
+        "category": "kem",
+        "created_at": "",
+        "updated_at": ""
+      },
+      {
+        "id": 17,
+        "product_name": "Bánh lát snack khoai tây",
+        "description": "Tại Mondelez International, chúng tôi vô cùng tự hào khi hiểu rõ sở thích ăn vặt của bạn hơn bất kỳ ai khác. Với danh mục đa dạng món ăn nhẹ thú vị được chế biến có ý thức của chúng tôi, chúng tôi mong muốn nâng cao thói quen ăn vặt của bạn và luôn làm cho việc ăn vặt trở nên thú vị và hấp dẫn.",
+        "unit_price": "2",
+        "stock_quantity": "88",
+        "image": "https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-lxmghs4ekkihe0",
+        "category": "nim bim",
+        "created_at": "",
+        "updated_at": ""
+      }
+    ],
+    "cart": []
+  }
