@@ -1,19 +1,20 @@
+"use client"
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginPage from './pages/login/LoginPage';
-import RegisterPage from './pages/register/RegisterPage';
-// import Home from './pages/user/Home/Home';
-// import HomePage from './pages/user/HomePage/HomePage';
-// import HomeAdmin from './pages/admin/Home/HomeAdmin';
-// import Customer from './pages/admin/customer/Customer';
-// import CategoriesPage from './pages/admin/categories/CategoriesPage';
-// import Products from './pages/admin/product/Products';
-// import ProductList from './pages/user/product/ProductList';
-// import ProductDetail from './pages/user/product/ProductDetail';
-// import Cart from './pages/user/cart/Cart';
-// import { AuthProvider, useAuth } from './context/auth-context';
+import LoginPage from './pages/login/app';
+import RegisterPage from './pages/register/app';
+import Home from './pages/user/Home/app';
+import HomePage from './pages/user/HomePage/app';
+import HomeAdmin from './pages/admin/Home/app';
+import Customer from './pages/admin/customer/app';
+import CategoriesPage from './pages/admin/categories/app';
+import Products from './pages/admin/product/app';
+import ProductList from './pages/user/product/productList/app';
+import ProductDetail from './pages/user/product/productDetail/app';
+import Cart from './pages/user/cart/app';
+import { AuthProvider, useAuth } from './context/app';
 
-function App() {
+function App({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
       <Routes>

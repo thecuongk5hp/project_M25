@@ -1,10 +1,18 @@
-import { useState, useEffect, ChangeEvent } from 'react';
-import { Product } from '../../interfaces/ProductsInterface';
+// pages/admin/products/page.tsx
+"use client";
+
+import { useState, ChangeEvent } from 'react';
+import { Product } from '../../../interfaces/ProductsInterface';
 import { Button, Form, Table, Container, Card } from 'react-bootstrap';
 import axios from 'axios';
-import { storage, ref, uploadBytes, getDownloadURL } from '../../config/firebase';
+import { storage, ref, uploadBytes, getDownloadURL } from '../../../config/firebase';
 
-const Products = ({ initialProducts, initialCategories }: { initialProducts: Product[], initialCategories: { name: string, description: string, status: string, id: number }[] }) => {
+interface ProductsProps {
+  initialProducts: Product[];
+  initialCategories: { name: string; description: string; status: string; id: number }[];
+}
+
+const Products = ({ initialProducts, initialCategories }: ProductsProps) => {
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [showForm, setShowForm] = useState(false);
   const [currentProduct, setCurrentProduct] = useState<Product>({
@@ -19,8 +27,6 @@ const Products = ({ initialProducts, initialCategories }: { initialProducts: Pro
     updated_at: ''
   });
   const [categories, setCategories] = useState(initialCategories);
-
-  // Không cần dùng useEffect cho fetchProducts và fetchCategories vì Next.js đã xử lý phía server
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -56,7 +62,7 @@ const Products = ({ initialProducts, initialCategories }: { initialProducts: Pro
 
   const handleSaveProduct = async () => {
     try {
-      const response = await axios.post<Product>('http://localhost:8080/products', currentProduct);
+      const response = await axios.post<Product>('/api/products', currentProduct);
       setProducts([...products, response.data]);
       setShowForm(false);
     } catch (error) {
@@ -71,7 +77,7 @@ const Products = ({ initialProducts, initialCategories }: { initialProducts: Pro
 
   const handleUpdateProduct = async () => {
     try {
-      const response = await axios.put<Product>(`http://localhost:8080/products/${currentProduct.id}`, currentProduct);
+      const response = await axios.put<Product>(`/api/products/${currentProduct.id}`, currentProduct);
       const updatedProducts = products.map((prod) =>
         prod.id === response.data.id ? response.data : prod
       );
@@ -84,7 +90,7 @@ const Products = ({ initialProducts, initialCategories }: { initialProducts: Pro
 
   const handleDeleteProduct = async (productId: number) => {
     try {
-      await axios.delete(`http://localhost:8080/products/${productId}`);
+      await axios.delete(`/api/products/${productId}`);
       const updatedProducts = products.filter((prod) => prod.id !== productId);
       setProducts(updatedProducts);
     } catch (error) {
@@ -224,7 +230,7 @@ export async function getServerSideProps() {
   try {
     const [productsResponse, categoriesResponse] = await Promise.all([
       axios.get<Product[]>('http://localhost:8080/products'),
-      axios.get<{ name: string, description: string, status: string, id: number }[]>('http://localhost:8080/categories')
+      axios.get<{ name: string; description: string; status: string; id: number }[]>('http://localhost:8080/categories')
     ]);
     return {
       props: {

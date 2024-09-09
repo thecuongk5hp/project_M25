@@ -1,14 +1,17 @@
+// app/categories/page.tsx
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Category } from '../../../interfaces/CategoriesInterface'; 
-import CategoryForm from './CategoryForm'; 
-import { Product } from '../../../interfaces/ProductsInterface'; 
+import { Category } from '../../../interfaces/CategoriesInterface';
+import CategoryForm from './CategoryForm/app';
+import { Product } from '../../../interfaces/ProductsInterface';
 import { Button } from 'react-bootstrap';
 
 const CategoriesPage: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
-  const [products, setProducts] = useState<Product[]>([]); // State để lưu danh sách sản phẩm của danh mục
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     fetchCategories();
@@ -29,13 +32,11 @@ const CategoriesPage: React.FC = () => {
       setProducts(response.data);
     } catch (error) {
       console.error(`Error fetching products for category ${categoryId}:`, error);
-      // Handle error fetching products
     }
   };
 
   const handleEditCategory = (category: Category) => {
     setEditingCategory(category);
-    // Fetch products when editing category
     fetchProductsByCategory(category.id);
   };
 
@@ -45,7 +46,6 @@ const CategoriesPage: React.FC = () => {
       setCategories(categories.filter(category => category.id !== categoryId));
     } catch (error) {
       console.error('Error deleting category:', error);
-      // Handle error deleting category
     }
   };
 
@@ -91,7 +91,6 @@ const CategoriesPage: React.FC = () => {
         fetchCategories={fetchCategories}
       />
 
-      {/* Hiển thị danh sách sản phẩm của danh mục */}
       {editingCategory && (
         <>
           <h3 className="mt-4 mb-3">Products in Category: {editingCategory.name}</h3>

@@ -1,6 +1,9 @@
+// app/categories/CategoryForm.tsx
+"use client";
+
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
-import { Category } from '../../../interfaces/CategoriesInterface'; 
+import { Category } from '../../../../interfaces/CategoriesInterface';
 
 interface Props {
   editingCategory: Category | null;
@@ -64,22 +67,47 @@ const CategoryForm: React.FC<Props> = ({ editingCategory, setEditingCategory, fe
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
-            <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleChange} required />
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="mb-3">
             <label htmlFor="description" className="form-label">Description</label>
-            <textarea className="form-control" id="description" name="description" value={formData.description} onChange={handleChange}></textarea>
+            <textarea
+              className="form-control"
+              id="description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+            />
           </div>
           <div className="mb-3">
             <label htmlFor="status" className="form-label">Status</label>
-            <select className="form-select" id="status" name="status" value={formData.status.toString()} onChange={handleChange} required>
+            <select
+              className="form-select"
+              id="status"
+              name="status"
+              value={formData.status.toString()}
+              onChange={handleChange}
+              required
+            >
               <option value="true">Active</option>
               <option value="false">Inactive</option>
             </select>
           </div>
-          <button type="submit" className="btn btn-primary me-2">{editingCategory ? 'Save Changes' : 'Add Category'}</button>
+          <button type="submit" className="btn btn-primary me-2">
+            {editingCategory ? 'Save Changes' : 'Add Category'}
+          </button>
           {editingCategory && (
-            <button type="button" className="btn btn-secondary" onClick={() => setEditingCategory(null)}>Cancel</button>
+            <button type="button" className="btn btn-secondary" onClick={() => setEditingCategory(null)}>
+              Cancel
+            </button>
           )}
         </form>
       </div>

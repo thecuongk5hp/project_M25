@@ -1,10 +1,12 @@
+"use client";
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import axios from 'axios';
+import Link from 'next/link'; // Nhập Link từ next/link
 import { User } from '../../interfaces/UserInterface';
 
 const LoginPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     email: '',
@@ -47,9 +49,9 @@ const LoginPage: React.FC = () => {
       const user = response.data[0];
 
       if (user.role === 'admin' && user.status === 'active') {
-        navigate('/admin');
+        router.push('/admin');
       } else if (user.role === 'user' && user.status === 'active') {
-        navigate('/');
+        router.push('/');
       } else {
         setErrorMessages({ ...errorMessages, general: 'Your account is inactive. Please contact support.' });
       }
@@ -96,7 +98,7 @@ const LoginPage: React.FC = () => {
         {errorMessages.general && <div className="text-danger mb-3">{errorMessages.general}</div>}
 
         <button type="submit" className="btn btn-primary mb-4 w-100">Sign in</button>
-        <p className="text-center">Not a member? <Link to="/register">Register</Link></p>
+        <p className="text-center">Not a member? <Link href="/register">Register</Link></p>
       </form>
     </div>
   );

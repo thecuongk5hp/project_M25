@@ -1,10 +1,13 @@
+// app/customers/page.tsx
+"use client";
+
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
-import { User } from '../../../interfaces/UserInterface'; // Import User interface
+import { User } from '../../../interfaces/UserInterface';
 
-const Customer = () => {
+const Customer: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
-  const [selectedUser, setSelectedUser] = useState<User | null>(null); // State to track selected user
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [showAddUserForm, setShowAddUserForm] = useState(false);
   const [formData, setFormData] = useState({
     username: '',
@@ -234,7 +237,7 @@ const Customer = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">User Details</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setSelectedUser(null)}></button>
+                <button type="button" className="btn-close" onClick={() => setSelectedUser(null)} aria-label="Close"></button>
               </div>
               <div className="modal-body">
                 <p><strong>Username:</strong> {selectedUser.username}</p>
